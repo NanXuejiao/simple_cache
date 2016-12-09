@@ -16,7 +16,7 @@ init([]) ->
 	 	    permanent, 2000, supervisor, [sc_element]},
 		    
 	 EventManager = {sc_event, {sc_event, start_link,[]},
-	 	         permanent, 2000, supervisor, [sc_event]},
+	 	         permanent, 2000, worker, [sc_event]},
 	 
          Children = [ElementSup, EventManager],
 	 
